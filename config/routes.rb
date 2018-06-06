@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
+
   devise_for :users
+
+  resources :registered_applications
+
   get 'welcome/index'
 
   get 'welcome/about'
 
-  root 'welcome#index'
+  authenticated :user do
+    root 'registered_applications#index', as: :authenticated_root
+  end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'welcome#index'
 end
