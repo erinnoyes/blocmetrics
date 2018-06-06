@@ -68,7 +68,7 @@ end
 
   gem 'bootstrap-sass'
 
-  gem 'faker'
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Used for ENV variables
 gem 'figaro', '1.0'

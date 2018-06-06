@@ -1,2 +1,14 @@
-<h1>RegisteredApplications#show</h1>
-<p>Find me in app/views/registered_applications/show.html.erb</p>
+<div class="row">
+    <div class="col-md-8">
+        <div class="media">
+            <div class="media-heading">
+                <h2><%= @app.name %></h2>
+                <h3><%= link_to @app.url, "#{@app.url}" %></h3>
+                <h4><%= @app.events.count %> events tracked</h4>
+            </div>
+            <div class="media-body">
+                <%= render 'registered_applications/events' || content_tag(:h4, "No events have been tracked yet for this application.") %>
+            </div>
+        </div>
+    </div>
+</div>

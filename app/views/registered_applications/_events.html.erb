@@ -1,0 +1,10 @@
+<% @events.each do |key, value| %>
+    <div class="row">
+        <div class="col-md-8">
+            <div id="event-<%= key %>">
+                <strong><%= key %></strong>
+                <small><p><%= pluralize(value.count, "occurrence") %> of this event since <%= @app.created_at %>.</p></small>
+            </div>
+        </div>
+    </div>
+<% end %>

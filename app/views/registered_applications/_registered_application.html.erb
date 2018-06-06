@@ -4,8 +4,8 @@
             <%= link_to "Delete Application", registered_application, method: :delete, class: 'btn btn-danger', data: {confirm: 'Are you sure you want to delete?'} %>
         </div>
         <div class="col-md-8">
-            <%= registered_application.name %>
-            <small><%= registered_application.url %></small><br />
+            <%= link_to registered_application.name, registered_application %>
+            <%= registered_application.url %>
         </div>
     </div>
 </div>

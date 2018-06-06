@@ -1,10 +1,11 @@
 class RegisteredApplicationsController < ApplicationController
   def index
-    @user = current_user
-    @apps = RegisteredApplication.where(user_id: @user.id)
+     @apps = current_user.registered_applications
   end
 
   def show
+    @app = RegisteredApplication.find(params[:id])
+    @events = @app.events.group_by(&:name)
   end
 
   def new
@@ -15,13 +16,10 @@ class RegisteredApplicationsController < ApplicationController
   end
 
   def create
-    @user = current_user
-    @app = RegisteredApplication.new(app_params)
-    @app.user = @user
+    @app = current_user.registered_applications.new(app_params)
     @app.save!
 
-    redirect_to action: "index"
-
+    redirect_to authenticated_root_path
   end
 
   def destroy
