@@ -14,7 +14,8 @@
 
 * Add the code below to the application.js file in your app
 
-```var blocmetrics = {};
+```
+var blocmetrics = {};
   blocmetrics.report = function(eventName){
     // create an event JSON object to send to the Blocmetrics analytics service.
     var event = {event: { name: eventName }};
