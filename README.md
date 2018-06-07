@@ -14,7 +14,7 @@
 
 * Add the code below to the application.js file in your app
 
-var blocmetrics = {};
+```var blocmetrics = {};
   blocmetrics.report = function(eventName){
     // create an event JSON object to send to the Blocmetrics analytics service.
     var event = {event: { name: eventName }};
@@ -27,10 +27,15 @@ var blocmetrics = {};
     //send the request
     request.send(JSON.stringify(event));
  }
+ ```
 
 
 * You can now call this function to help you track events such as click events:
+```
 <a href="/about" onclick="blocmetrics.report('about link clicked')">
+```
 
 * ...or even execute when a page is loaded:
+```
 <script>blocmetrics.report('about page loaded');</script>
+```
