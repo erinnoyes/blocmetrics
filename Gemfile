@@ -67,7 +67,8 @@ group :development do
 end
 
   gem 'bootstrap-sass'
-
+  gem 'chartkick'
+  gem 'groupdate'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Used for ENV variables
