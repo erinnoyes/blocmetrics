@@ -8,3 +8,12 @@
         </div>
     </div>
 <% end %>
+
+<div class="row">
+    <div class="col-md-12">
+        <%= pie_chart @app.events.group(:name).count %>
+    </div>
+    <div class="col-md-12">
+        <%= line_chart @app.events.group_by_day(:created_at, last: 90).count %>
+    </div>
+</div>
