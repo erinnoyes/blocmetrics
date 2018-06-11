@@ -41,7 +41,6 @@ gem 'active_model_serializers', '~> 0.10.0'
 
 group :production do
   # Use pg as the production database for Active Record
-  gem 'pg', '~> 0.20'
   gem 'rails_12factor'
 end
 
@@ -65,9 +64,10 @@ group :development do
   # gem 'spring-watcher-listen', '~> 2.0.0'
   # using mailcatcher for emails
 end
-
+  gem 'pg', '~> 0.20'
   gem 'bootstrap-sass'
-
+  gem 'chartkick'
+  gem 'groupdate'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Used for ENV variables
